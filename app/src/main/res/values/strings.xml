@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AndroidUIandLogin-JacobEsworthy</string>
+    <string name="loginScreenStr">Login/Sign Up</string>
+    <string name="loginImageViewDescriptStr">BeachView</string>
+    <string name="LoginEmailAutoFillStr">Email or ID</string>
+    <string name="LoginPasswordAutoFillStr">Password</string>
+    <string name="LoginBtnStr">login</string>
+    <string name="SignUpBtnStr">sign up</string>
+    <string name="LoginTextViewStr">or</string>
+    <string name="SignUpActivity">SignUp</string>
+    <string name="LoginActivity">Logged In!</string>
+    <string name="EmailStr">Type Your Email Below</string>
+    <string name="FirstNameStr">Type Your First Name Below</string>
+    <string name="LastNameStr">Type Your Last Name Below</string>
+    <string name="UsernameStr">Type Your Desired User Name Below</string>
+    <string name="BdayStr">Type Your Birthday Below</string>
+    <string name="PhoneNumStr">Type Your Phone Number Below</string>
+    <string name="PasswordStr">Type Your Password Below</string>
+    <string name="EditFirstNameStr">First Name Here</string>
+    <string name="EditLastNameStr">Last Name Here</string>
+    <string name="EditEmailStr">Email Address</string>
+    <string name="EditBdayStr">Birthday</string>
+    <string name="EditUsernameStr">Username</string>
+    <string name="EditPhoneNumStr">Phone Number</string>
+</resources>

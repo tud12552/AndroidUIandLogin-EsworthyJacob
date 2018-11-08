@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen">
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutLogin"
+        android:layout_width="match_parent"
+        android:layout_height="287dp"
+        android:background="@color/LinearLayoutBackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editTxtEmail"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/LoginEmailAutoFillStr"
+            android:autofillHints="@string/LoginEmailAutoFillStr"
+            android:inputType="textEmailAddress"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTxtPassowrd"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/LoginPasswordAutoFillStr"
+            android:autofillHints="@string/LoginPasswordAutoFillStr"
+            android:inputType="textPassword"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/LinearLayoutBtnBackground"
+            android:text="@string/LoginBtnStr"
+            android:textAllCaps="true"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TxtViewOr"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/LoginTextViewStr"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/BtnSignUp"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/Green"
+            android:text="@string/SignUpBtnStr"
+            android:textAllCaps="true"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayoutLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_beach_foreground" />
+
+
+</android.support.constraint.ConstraintLayout>
