@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">AndroidUIandLogin-JacobEsworthy</string>
+    <string name="ViewAllUsersActivity">All Users</string>
     <string name="loginScreenStr">Login/Sign Up</string>
     <string name="loginImageViewDescriptStr">BeachView</string>
     <string name="LoginEmailAutoFillStr">Email or ID</string>
@@ -17,4 +18,5 @@
     <string name="EditPhoneNumStr">Type Your Phone Number Here</string>
     <string name="EditPasswordStr">Type Your Password Here</string>
     <string name="btnConfirm">Confirm</string>
+    <string name="btnViewAllUsers">View All Users</string>
 </resources>

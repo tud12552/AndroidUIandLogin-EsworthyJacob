@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -37,8 +38,8 @@ public class SignUpActivity extends AppCompatActivity {
         mBtnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"You Have Been Added.",Toast.LENGTH_SHORT).show();
                 Intent goToHomeScreen = new Intent(SignUpActivity.this,LoginScreen.class);
-
                 startActivity(goToHomeScreen);
             }
         });
