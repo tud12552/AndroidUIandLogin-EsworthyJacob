@@ -15,8 +15,8 @@ public class LoginSuccessActivity extends AppCompatActivity {
 
     private TextView mTxtViewWelcomeMessage = null;
 
-    private String mName = null;
-    private String mSurName = null;
+    private String mFirstName = null;
+    private String mLastName = null;
     private String mBday = null;
 
 
@@ -31,12 +31,12 @@ public class LoginSuccessActivity extends AppCompatActivity {
 
         mTxtViewWelcomeMessage = (TextView)findViewById(R.id.txtViewLoginSuccess);
 
-        mName = data.getStringExtra("NAME");
-        mSurName = data.getStringExtra("SURNAME");
-        mBday = data.getStringExtra("BIRTHDAY");
+        mFirstName = data.getStringExtra("CURRENT_FIRST_NAME");
+        mLastName = data.getStringExtra("CURRENT_LAST_NAME");
+        mBday = data.getStringExtra("CURRENT_BDAY");
 
         StringBuilder strBuild = new StringBuilder(200);
-        strBuild.append("Welcome " + mName + " " + mSurName + "\n" + "Your Birthday is:\n" + mBday);
+        strBuild.append("Welcome " + mFirstName + " " + mLastName + "\n" + "Your Birthday is:\n" + mBday);
 
         mTxtViewWelcomeMessage.setText(strBuild);
 

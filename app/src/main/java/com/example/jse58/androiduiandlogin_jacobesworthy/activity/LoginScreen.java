@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,12 @@ public class LoginScreen extends AppCompatActivity {
     private ArrayList<UserProfile> mUsers;
     private UserProfilePersistence mPresistenceProfile;
 
+    private ListView listView;
+
+    private String[] firstNames;
+    private String[] lastNames;
+    private String[] bdays;
+
     private ImageView mLoginImgView = null;
     private EditText mEditTxtEmail = null;
     private EditText mEditTxtPswd = null;
@@ -33,6 +40,11 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+        CustomListAdapter customList = new CustomListAdapter(this,firstNames,lastNames,bdays);
+
+        listView = (ListView)findViewById(R.id.listViewID);
+        listView.setAdapter(customList);
 
 
 
@@ -47,16 +59,22 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Boolean b = false;
+                String[] b = new String[4];
                 Toast.makeText(getApplicationContext(),"Login Button Pressed",Toast.LENGTH_SHORT).show();
 
                 if( !mEditTxtEmail.getText().toString().isEmpty() && !mEditTxtPswd.getText().toString().isEmpty())
                 {
                     b = validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
-                    Toast.makeText(getApplicationContext(),"Loggin In.",Toast.LENGTH_SHORT).show();
 
-                    Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
-                    startActivity(intentLoginSuccess);
+                    if(b[3].matches("true")) {
+                        Toast.makeText(getApplicationContext(), "Logging In.", Toast.LENGTH_SHORT).show();
+
+                        Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
+                        intentLoginSuccess.putExtra("CURRENT_FIRST_NAME", b[0]);
+                        intentLoginSuccess.putExtra("CURRENT_LAST_NAME", b[1]);
+                        intentLoginSuccess.putExtra("CURRENT_BDAY", b[2]);
+                        startActivity(intentLoginSuccess);
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Type your credentails first.",Toast.LENGTH_SHORT).show();
@@ -83,21 +101,32 @@ public class LoginScreen extends AppCompatActivity {
         mPresistenceProfile = new UserProfilePersistence(this);
         mUsers = mPresistenceProfile.getDataFromDB();
 
+        int i = 0;
+        for(UserProfile up:mUsers)
+        {
+            firstNames[i] = up.getName();
+            lastNames[i] = up.getLastName();
+            bdays[i] = up.getBday();
+            i++;
+        }
     }
 
-    public boolean validateInfo(String user, String pswd)
+    public String[] validateInfo(String user, String pswd)
     {
-        boolean b = false;
+        String[] returnStrArr = new String[4];
         for(UserProfile up:mUsers)
         {
             if(up.getEmail().equals(user) || up.getUserName().equals(user)) {
                 if (up.getPswd().equals(pswd)) {
-                  b = true;
+                  returnStrArr[0] = up.getName();
+                  returnStrArr[1] = up.getLastName();
+                  returnStrArr[2] = up.getBday();
+                  returnStrArr[3] = "true";
                   break;
                 }
             }
-            b = false;
+            returnStrArr[3] = "false";
         }
-        return b;
+        return returnStrArr;
     }
 }
