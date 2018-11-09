@@ -53,6 +53,9 @@ public class LoginScreen extends AppCompatActivity {
                 {
                     validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
                 }
+                else{
+                    Toast.makeText(getApplicationContext(),"Invalid credentials.",Toast.LENGTH_SHORT).show();
+                }
 
                 Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
                 intentLoginSuccess.putExtra("NAME", "Jacob");
@@ -86,13 +89,17 @@ public class LoginScreen extends AppCompatActivity {
 
     public boolean validateInfo(String user, String pswd)
     {
+        boolean b = false;
         for(UserProfile up:mUsers)
         {
             if(up.getEmail().equals(user) || up.getUserName().equals(user)) {
                 if (up.getPswd().equals(pswd)) {
-                    return true;
+                  b = true;
+                  break;
                 }
             }
+            b = false;
         }
+        return b;
     }
 }
