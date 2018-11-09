@@ -1,6 +1,7 @@
 package com.example.jse58.androiduiandlogin_jacobesworthy.activity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,8 +12,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jse58.androiduiandlogin_jacobesworthy.R;
+import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao.UserProfilePersistence;
+import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.entity.UserProfile;
+
+import java.util.ArrayList;
 
 public class LoginScreen extends AppCompatActivity {
+
+    private ArrayList<UserProfile> mUsers;
+    private UserProfilePersistence mPresistenceProfile;
 
     private ImageView mLoginImgView = null;
     private EditText mEditTxtEmail = null;
@@ -25,6 +33,8 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+
 
         mTxtViewOr = (TextView)findViewById(R.id.txtViewLoginSuccess);
         mLoginImgView = (ImageView)findViewById(R.id.imageViewLogin);
@@ -60,9 +70,9 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume()
+    protected void onStart()
     {
-        super.onResume();
+        super.onStart();
 
         mEditTxtEmail.setText("");
         mEditTxtPswd.setText("");

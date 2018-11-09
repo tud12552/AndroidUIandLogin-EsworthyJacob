@@ -9,8 +9,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.jse58.androiduiandlogin_jacobesworthy.R;
+import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao.UserProfilePersistence;
+import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.entity.UserProfile;
 
 public class SignUpActivity extends AppCompatActivity {
+
+    private UserProfilePersistence mProfilePersistence;
 
     private Button mBtnConfirm = null;
 
@@ -34,14 +38,29 @@ public class SignUpActivity extends AppCompatActivity {
         mEditTxtUserName = (EditText) findViewById(R.id.editTxtUserName);
         mEditTxtBday = (EditText) findViewById(R.id.editTxtBday);
         mEditTxtPhone = (EditText) findViewById(R.id.editTxtPhoneNum);
+        mEditTxtEmail = (EditText)findViewById(R.id.editTxtEmail);
         mEditTxtPswd = (EditText) findViewById(R.id.editTxtNewPassword);
 
 
         mBtnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String first = mEditTxtFirstName.getText().toString();
+                String last = mEditTxtLastName.getText().toString();
+                String usern = mEditTxtUserName.getText().toString();
+                String bday = mEditTxtBday.getText().toString();
+                String phone = mEditTxtPhone.getText().toString();
+                String email = mEditTxtEmail.getText().toString();
+                String pswd = mEditTxtPswd.getText().toString();
+
+                UserProfile newUser = new UserProfile(first,last,usern,phone,email,bday,pswd);
+
+                mProfilePersistence.insert(newUser);
+
                 Toast.makeText(getApplicationContext(),"You Have Been Added.",Toast.LENGTH_SHORT).show();
+
                 Intent goToHomeScreen = new Intent(SignUpActivity.this,LoginScreen.class);
+                goToHomeScreen.putExtra("USER_DATA", newUser);
                 startActivity(goToHomeScreen);
             }
         });
