@@ -9,17 +9,12 @@
     <string name="LoginTextViewStr">or</string>
     <string name="SignUpActivity">SignUp</string>
     <string name="LoginActivity">Logged In!</string>
-    <string name="EmailStr">Type Your Email Below</string>
-    <string name="FirstNameStr">Type Your First Name Below</string>
-    <string name="LastNameStr">Type Your Last Name Below</string>
-    <string name="UsernameStr">Type Your Desired User Name Below</string>
-    <string name="BdayStr">Type Your Birthday Below</string>
-    <string name="PhoneNumStr">Type Your Phone Number Below</string>
-    <string name="PasswordStr">Type Your Password Below</string>
-    <string name="EditFirstNameStr">First Name Here</string>
-    <string name="EditLastNameStr">Last Name Here</string>
-    <string name="EditEmailStr">Email Address</string>
-    <string name="EditBdayStr">Birthday</string>
-    <string name="EditUsernameStr">Username</string>
-    <string name="EditPhoneNumStr">Phone Number</string>
+    <string name="EditEmailStr">Type Your Email Below</string>
+    <string name="EditFirstNameStr">Type Your First Name Here</string>
+    <string name="EditLastNameStr">Type Your Last Name Here</string>
+    <string name="EditUsernameStr">Type Your Desired User Name Here</string>
+    <string name="EditBdayStr">Type Your Birthday Here</string>
+    <string name="EditPhoneNumStr">Type Your Phone Number Here</string>
+    <string name="EditPasswordStr">Type Your Password Here</string>
+    <string name="btnConfirm">Confirm</string>
 </resources>
