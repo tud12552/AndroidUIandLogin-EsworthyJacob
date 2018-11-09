@@ -49,6 +49,11 @@ public class LoginScreen extends AppCompatActivity {
             {
                 Toast.makeText(getApplicationContext(),"Login Button Pressed",Toast.LENGTH_SHORT).show();
 
+                if( !mEditTxtEmail.getText().toString().isEmpty() && !mEditTxtPswd.getText().toString().isEmpty())
+                {
+                    validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
+                }
+
                 Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
                 intentLoginSuccess.putExtra("NAME", "Jacob");
                 intentLoginSuccess.putExtra("SURNAME", "Esworthy");
@@ -74,7 +79,20 @@ public class LoginScreen extends AppCompatActivity {
     {
         super.onStart();
 
-        mEditTxtEmail.setText("");
-        mEditTxtPswd.setText("");
+        mPresistenceProfile = new UserProfilePersistence(this);
+        mUsers = mPresistenceProfile.getDataFromDB();
+
+    }
+
+    public boolean validateInfo(String user, String pswd)
+    {
+        for(UserProfile up:mUsers)
+        {
+            if(up.getEmail().equals(user) || up.getUserName().equals(user)) {
+                if (up.getPswd().equals(pswd)) {
+                    return true;
+                }
+            }
+        }
     }
 }
