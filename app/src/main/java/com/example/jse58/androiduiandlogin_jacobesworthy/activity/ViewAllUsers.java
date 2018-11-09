@@ -1,7 +1,9 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy;
+package com.example.jse58.androiduiandlogin_jacobesworthy.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jse58.androiduiandlogin_jacobesworthy.R;
 
 public class ViewAllUsers extends AppCompatActivity {
 

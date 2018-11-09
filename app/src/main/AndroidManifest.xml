@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginScreen"
+            android:name=".activity.LoginScreen"
             android:label="@string/loginScreenStr">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginSuccessActivity"
+            android:name=".activity.LoginSuccessActivity"
             android:label="@string/LoginActivity"></activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activity.SignUpActivity"
             android:label="@string/SignUpActivity"></activity>
-        <activity android:name=".ViewAllUsers"
+        <activity android:name=".activity.ViewAllUsers"
             android:label = "@string/ViewAllUsersActivity"></activity>
     </application>
 

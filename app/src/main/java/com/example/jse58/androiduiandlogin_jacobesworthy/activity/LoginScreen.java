@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy;
+package com.example.jse58.androiduiandlogin_jacobesworthy.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.example.jse58.androiduiandlogin_jacobesworthy.R;
 
 public class LoginScreen extends AppCompatActivity {
 

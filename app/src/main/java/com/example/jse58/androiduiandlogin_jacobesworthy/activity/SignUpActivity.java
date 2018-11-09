@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy;
+package com.example.jse58.androiduiandlogin_jacobesworthy.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.jse58.androiduiandlogin_jacobesworthy.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
