@@ -53,16 +53,13 @@ public class LoginScreen extends AppCompatActivity {
                 if( !mEditTxtEmail.getText().toString().isEmpty() && !mEditTxtPswd.getText().toString().isEmpty())
                 {
                     b = validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Type your credentails first.",Toast.LENGTH_SHORT).show();
-                }
-
-                if (b) {
-
+                    Toast.makeText(getApplicationContext(),"Loggin In.",Toast.LENGTH_SHORT).show();
 
                     Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
                     startActivity(intentLoginSuccess);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Type your credentails first.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
