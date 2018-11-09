@@ -14,7 +14,7 @@ public class UserProfile implements Serializable {
     private String mPswd;
 
 
-    public UserProfile(String firstname, String lastname, String username, String phonenumber, String email, String pswd, String bday ) {
+    public UserProfile(String firstname, String lastname, String username, String phonenumber, String email, String bday, String pswd ) {
         this.mFirstName = firstname;
         this.mLastName = lastname;
         this.mUserName = username;
