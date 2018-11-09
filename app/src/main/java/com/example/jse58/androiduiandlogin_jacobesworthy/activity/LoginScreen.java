@@ -47,22 +47,23 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
+                Boolean b = false;
                 Toast.makeText(getApplicationContext(),"Login Button Pressed",Toast.LENGTH_SHORT).show();
 
                 if( !mEditTxtEmail.getText().toString().isEmpty() && !mEditTxtPswd.getText().toString().isEmpty())
                 {
-                    validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
+                    b = validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Invalid credentials.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Type your credentails first.",Toast.LENGTH_SHORT).show();
                 }
 
-                Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
-                intentLoginSuccess.putExtra("NAME", "Jacob");
-                intentLoginSuccess.putExtra("SURNAME", "Esworthy");
-                intentLoginSuccess.putExtra("BIRTHDAY", "April 20, 1993");
+                if (b) {
 
-                startActivity(intentLoginSuccess);
+
+                    Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
+                    startActivity(intentLoginSuccess);
+                }
             }
         });
 
