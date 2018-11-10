@@ -14,7 +14,7 @@ import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.entity.Use
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private UserProfilePersistence mProfilePersistence;
+    private UserProfilePersistence mProfilePersistence = new UserProfilePersistence(this);
 
     private Button mBtnConfirm = null;
 
@@ -59,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"You Have Been Added.",Toast.LENGTH_SHORT).show();
 
-                Intent goToHomeScreen = new Intent(SignUpActivity.this,LoginScreen.class);
+                Intent goToHomeScreen = new Intent(v.getContext(),LoginScreen.class);
                 goToHomeScreen.putExtra("USER_DATA", newUser);
                 startActivity(goToHomeScreen);
             }

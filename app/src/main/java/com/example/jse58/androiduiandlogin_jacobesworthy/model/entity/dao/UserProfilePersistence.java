@@ -33,7 +33,6 @@ public class UserProfilePersistence implements IPersistence
         contentValues.put(UserTable.COLUMN_NAME_PHONE_PSWD, userProfile.getPswd());
         contentValues.put(UserTable.COLUMN_NAME_BDAY, String.valueOf(userProfile.getBday()));
 
-        // Insert the ContentValues into the Movie table.
         sqLiteDatabase.insert(UserTable.TABLE_NAME, null, contentValues);
 
         sqLiteDatabase.close();
@@ -42,7 +41,7 @@ public class UserProfilePersistence implements IPersistence
     @Override
     public ArrayList getDataFromDB()
     {
-        ArrayList<UserProfile> users = null;
+        ArrayList<UserProfile> users;
 
         SQLiteDatabase sqLiteDatabase = allowDatabase.getWritableDatabase();
 

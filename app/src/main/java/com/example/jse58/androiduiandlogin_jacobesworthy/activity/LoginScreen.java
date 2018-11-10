@@ -41,10 +41,10 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        CustomListAdapter customList = new CustomListAdapter(this,firstNames,lastNames,bdays);
+        //CustomListAdapter customList = new CustomListAdapter(this,firstNames,lastNames,bdays);
 
-        listView = (ListView)findViewById(R.id.listViewID);
-        listView.setAdapter(customList);
+        //listView = (ListView)findViewById(R.id.listViewID);
+        //listView.setAdapter(customList);
 
 
 
@@ -59,14 +59,17 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
+
+                mUsers = mPresistenceProfile.getDataFromDB();
                 String[] b = new String[4];
                 Toast.makeText(getApplicationContext(),"Login Button Pressed",Toast.LENGTH_SHORT).show();
 
                 if( !mEditTxtEmail.getText().toString().isEmpty() && !mEditTxtPswd.getText().toString().isEmpty())
                 {
+                    Toast.makeText(getApplicationContext(), "Verifying Info.", Toast.LENGTH_SHORT).show();
                     b = validateInfo(mEditTxtEmail.getText().toString(), mEditTxtPswd.getText().toString());
 
-                    if(b[3].matches("true")) {
+                    if(!b[3].isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Logging In.", Toast.LENGTH_SHORT).show();
 
                         Intent intentLoginSuccess = new Intent(LoginScreen.this, LoginSuccessActivity.class);
@@ -113,7 +116,20 @@ public class LoginScreen extends AppCompatActivity {
 
     public String[] validateInfo(String user, String pswd)
     {
+        mUsers = mPresistenceProfile.getDataFromDB();
+
         String[] returnStrArr = new String[4];
+        returnStrArr[0] = "0";
+        returnStrArr[1] = "1";
+        returnStrArr[2] = "2";
+        returnStrArr[3] = "a";
+
+        if(mUsers.size() == 0)
+        {
+            Toast.makeText(getApplicationContext(),"Please Signup.",Toast.LENGTH_SHORT).show();
+            return returnStrArr;
+        }
+
         for(UserProfile up:mUsers)
         {
             if(up.getEmail().equals(user) || up.getUserName().equals(user)) {
@@ -125,7 +141,7 @@ public class LoginScreen extends AppCompatActivity {
                   break;
                 }
             }
-            returnStrArr[3] = "false";
+            returnStrArr[3] = "a";
         }
         return returnStrArr;
     }
