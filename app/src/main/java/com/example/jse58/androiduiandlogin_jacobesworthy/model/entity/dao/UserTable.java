@@ -1,5 +1,7 @@
 package com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao;
 
+import java.util.UUID;
+
 public class UserTable {
 
     public static final String TABLE_NAME = "users";
@@ -10,10 +12,12 @@ public class UserTable {
     public static final String COLUMN_NAME_PHONE_NUM = "phoneNum";
     public static final String COLUMN_NAME_EMAIL = "email";
     public static final String COLUMN_NAME_PHONE_PSWD = "pswd";
+    public static long COLUMN_NAME_ID;
 
     public static String create(){
         return new String ( "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_NAME_FIRST_NAME + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_NAME_ID + " PRIMARY KEY AUTO INCREMENT" +
+                COLUMN_NAME_FIRST_NAME + " TEXT," +
                 COLUMN_NAME_LAST_NAME + " TEXT," +
                 COLUMN_NAME_USER_NAME  + " TEXT," +
                 COLUMN_NAME_BDAY + " TEXT," +

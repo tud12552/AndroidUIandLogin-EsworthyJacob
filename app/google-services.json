@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "964332639918",
+    "firebase_url": "https://androiduilogin-jacobesworthy.firebaseio.com",
+    "project_id": "androiduilogin-jacobesworthy",
+    "storage_bucket": "androiduilogin-jacobesworthy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964332639918:android:5582f648b92a6a8c",
+        "android_client_info": {
+          "package_name": "com.example.jse58.androiduiandlogin_jacobesworthy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964332639918-0cuvvg5tpchekdfs59kuing998bu25us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jse58.androiduiandlogin_jacobesworthy",
+            "certificate_hash": "fa2dadda42ee0d70486028277c45d476a0f4c498"
+          }
+        },
+        {
+          "client_id": "964332639918-992gdihikacv5vf3al0ggp5ajooqhtlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-igetoLnUDsZBT4vyB_zpFne-ohuGXAM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964332639918-992gdihikacv5vf3al0ggp5ajooqhtlj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
