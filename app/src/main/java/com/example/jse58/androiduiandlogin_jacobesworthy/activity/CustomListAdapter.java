@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.jse58.androiduiandlogin_jacobesworthy.R;
 
+// I added this comment to test the new GitHub integration at school using PSU PC's.
+
 public class CustomListAdapter extends ArrayAdapter {
 
     private final Activity mContext;
