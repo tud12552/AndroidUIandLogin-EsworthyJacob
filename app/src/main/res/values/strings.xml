@@ -19,4 +19,6 @@
     <string name="EditPasswordStr">Type Your Password Here</string>
     <string name="btnConfirm">Confirm</string>
     <string name="btnViewAllUsers">View All Users</string>
+    <string name="FullName">Full Name</string>
+    <string name="Birthday">Birthday</string>
 </resources>
