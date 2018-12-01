@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.entity;
+package com.example.jse58.androiduiandlogin_jacobesworthy;
 
 import android.support.annotation.Nullable;
 import java.io.Serializable;

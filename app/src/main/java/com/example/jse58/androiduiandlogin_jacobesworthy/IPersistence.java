@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao;
+package com.example.jse58.androiduiandlogin_jacobesworthy;
 import java.util.ArrayList;
 
 public interface IPersistence<T> {

@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao;
+package com.example.jse58.androiduiandlogin_jacobesworthy;
 
 import java.util.UUID;
 
@@ -15,8 +15,8 @@ public class UserTable {
     public static long COLUMN_NAME_ID;
 
     public static String create(){
-        return new String ( "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_NAME_ID + " PRIMARY KEY AUTO INCREMENT" +
+        return new String ( "CREATE TABLE " + TABLE_NAME +
+                " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NAME_FIRST_NAME + " TEXT," +
                 COLUMN_NAME_LAST_NAME + " TEXT," +
                 COLUMN_NAME_USER_NAME  + " TEXT," +

@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy.activity;
+package com.example.jse58.androiduiandlogin_jacobesworthy;
 
 import android.app.Activity;
 import android.view.LayoutInflater;

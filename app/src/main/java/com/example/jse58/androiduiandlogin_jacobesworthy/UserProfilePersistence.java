@@ -1,4 +1,4 @@
-package com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.dao;
+package com.example.jse58.androiduiandlogin_jacobesworthy;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-
-import com.example.jse58.androiduiandlogin_jacobesworthy.model.entity.entity.UserProfile;
 
 public class UserProfilePersistence implements IPersistence
 {
