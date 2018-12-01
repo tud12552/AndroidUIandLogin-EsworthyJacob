@@ -21,6 +21,7 @@ public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "SignUpActivity";
 
     private UserProfilePersistence mProfilePersistence = new UserProfilePersistence(this);
+    UserProfile newUser;
 
     private Button mBtnConfirm = null;
 
@@ -62,8 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    public void createNewUser(View v)
-    {
+    public void createNewUser(View v) {
         String first = mEditTxtFirstName.getText().toString();
         String last = mEditTxtLastName.getText().toString();
         String usern = mEditTxtUserName.getText().toString();
@@ -72,29 +72,24 @@ public class SignUpActivity extends AppCompatActivity {
         String email = mEditTxtEmail.getText().toString();
         String password = mEditTxtPswd.getText().toString();
 
-        UserProfile newUser = new UserProfile(first,last,usern,phone,email,bday,password);
-
+        newUser = new UserProfile(first, last, usern, phone, email, bday, password);
         mProfilePersistence.insert(newUser);
 
-        Toast.makeText(getApplicationContext(),"You Have Been Added.",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "You Have Been Added.", Toast.LENGTH_SHORT).show();
 
-
-        mSignUpAuth.createUserWithEmailAndPassword(email,password)
+        mSignUpAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
-                            Log.d(TAG,"SignUpActivity : Success");
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "SignUpActivity : Success");
                             toastMessage("Authentication SUCCESSFUL.");
                             FirebaseUser newUser = mSignUpAuth.getCurrentUser();
-                            Intent goToHomeScreen = new Intent(getApplicationContext(),LoginScreen.class);
-                            goToHomeScreen.putExtra("NEW_EMAIL",newUser.getEmail());
+                            Intent goToHomeScreen = new Intent(getApplicationContext(), LoginScreen.class);
+                            goToHomeScreen.putExtra("NEW_EMAIL", newUser.getEmail());
                             startActivity(goToHomeScreen);
-                        }
-                        else
-                        {
-                            Log.d(TAG,"SignUpActivity : Failed");
+                        } else {
+                            Log.d(TAG, "SignUpActivity : Failed");
                             toastMessage("Authentication FAILURE.");
                         }
                     }
