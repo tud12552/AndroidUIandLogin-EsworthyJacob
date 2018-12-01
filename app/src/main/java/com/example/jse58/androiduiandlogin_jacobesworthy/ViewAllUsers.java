@@ -35,7 +35,7 @@ public class ViewAllUsers extends AppCompatActivity {
 
         for(UserProfile currentUserProf : userProfiles)
         {
-            RecyclerViewItem recyclerViewItem = new RecyclerViewItem(currentUserProf.getName() + currentUserProf.getLastName(), currentUserProf.getBday());
+            RecyclerViewItem recyclerViewItem = new RecyclerViewItem(currentUserProf.getName() + " " + currentUserProf.getLastName(), currentUserProf.getBday());
             recyclerViewItems.add(recyclerViewItem);
         }
 
